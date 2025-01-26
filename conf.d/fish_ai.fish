@@ -146,7 +146,7 @@ end
 
 function show_progess_indicator --description "Show a progress indicator."
     if type -q fish_right_prompt
-        set rplen (string length -v (fish_right_prompt)[-1])
+        set rplen (string length (fish_right_prompt)[-1])
     else
         set rplen 0
     end
