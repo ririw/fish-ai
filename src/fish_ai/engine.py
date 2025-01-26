@@ -21,7 +21,6 @@ from binaryornot.check import is_binary
 from os import access, R_OK
 from re import match
 from anthropic import Anthropic
-import cohere
 
 logger = logging.getLogger()
 
@@ -241,6 +240,7 @@ def get_response(messages):
         )
         response = completions.content[0].text
     elif get_config('provider') == 'cohere':
+        raise NotImplemented("No cohere support")
         api_key = get_config('api_key')
         client = cohere.ClientV2(api_key)
         completions = client.chat(
